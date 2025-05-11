@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kupon Ulang Tahun Eca</title>
+  <h1>ambil dan tukar kupon ini ke jepe dengan 1x hidangan makanan</h1>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff5f8;
+      text-align: center;
+      padding: 50px;
+      color: #9d0d96;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .title {
+      font-size: 24px;
+      color: #d63384;
+    }
+    .subtitle {
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    .amount {
+      font-size: 32px;
+      font-weight: bold;
+      color: #28a745;
+    }
+    .qr-code {
+      margin-top: 30px;
+      display: none;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #d5248f;
+    }
+    .password-input {
+      margin-top: 20px;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="title">🎉 Selamat Ulang Tahun, Eca!</div>
+    <div class="subtitle">Hadiah spesial dari Jepe 🎁</div>
+    <div class="amount">Rp 50.000</div>
+
+    <div class="password-input">
+      <p>Masukkan password untuk melihat QR verifikasi:</p>
+      <input type="password" id="password" placeholder="Masukkan password">
+      <br>
+      <button onclick="cekPassword()">Lihat Kupon</button>
+    </div>
+
+    <div class="qr-code" id="qr">
+      <p>Scan barcode di bawah ini saat ingin menukar kupon:</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=VERIFIKASI-KUPON-ECA" alt="QR untuk verifikasi Jepe">
+    </div>
+
+    <div class="footer">* Kupon hanya berlaku 1x dan ditukar langsung ke Jepe.</div>
+  </div>
+
+  <script>
+    function cekPassword() {
+      const input = document.getElementById("password").value;
+      const qr = document.getElementById("qr");
+      if (input === "ura25") {
+        qr.style.display = "block";
+      } else {
+        alert("Password salah! Hubungi Jepe untuk password.");
+      }
+    }
+  </script>
+</body>
+</html>
